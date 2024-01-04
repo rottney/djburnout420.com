@@ -1,165 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>DJ BURNOUT</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">   
+<title>djburnout420.com</title>
+<script src="https://unpkg.com/feather-icons"></script>
 
 <style>
-* {
-  box-sizing: border-box;
-}
 
 body {
-  font-family: Arial;
-  padding: 10px;
-  background: #f1f1f1;
+  /* background-image: url("https://www.w3schools.com/howto/img_link_tree_template3_bg.jpg"); /* The image used for background */
+  background-image: url("images/background.jpg"); /* The image used for background */
+  background-position: center top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  /* background-size: cover; /* Resize the background image to cover the entire container */
+  font-family:'Courier New', Courier, monospace;
 }
 
-/* I think refactor this.. */
-img {
+.container {
   width: 100%;
-  height: auto;
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  text-align: center;
-  background: white;
+.name {
+  margin-top: 15px !important;
 }
 
-.header h1 {
-  font-size: 50px;
+.w3-theme-d3 {
+  background-color: rgba(42, 169, 219, 0.6) !important;
 }
 
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+.w3-theme-d3:hover {
+  background-color: rgba(42, 169, 219, 0.8) !important;
 }
 
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+a {
+  font-size: x-large;
+}
+
+.w3-border {
+  border: 3px solid #ccc !important;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  jusify-content: center;
+  align-items: center;
+}
+
+.links-container a {
+  width: 80%;
+}
+
+.profession {
+  font-size: 14px;
+}
+
+.subscribe {
+  font-size: 15px;
+}
+
+.submit form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit form button {
+  margin-top: 5px;
+  background-color: rgba(27, 122, 159, 0.9) !important;
+  color: #fff !important;
+}
+
+.submit form button:hover {
+  background-color: rgba(15, 67, 87, 0.9) !important;
+  color: #fff !important;
+}
+.submit form input {
+  width: 100% !important;
+}
+.submit form input::placeholder {
+  color: #fff;
+}
+
+.icons {
+  display: flex;
+  gap: 40px;
+}
+
+.icons a {
   text-decoration: none;
 }
 
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+.icons a svg {
+  fill: #d0ecf7;
+  transform: scale(1.5);
 }
 
-/* I have no idea */
-.row {
-
-}
-
-/* Changed from template; only one column */
-.column {   
-  float: left;
-  width: 100%;
-}
-
-/* Fake image */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-/* Clear floats after the columns */
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-  position: sticky;
-  bottom: 0;
-}
-
-/* Responsive layout - when the screen is less than 400px wide, 
-  make the navigation links stack on top of each other 
-  instead of next to each other */
-@media screen and (max-width: 400px) {
-  .topnav a {
-    float: none;
+@media screen and (min-width: 768px) {
+  .link {
     width: 100%;
   }
 }
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .profession {
+    font-size: 24px;
+  }
+}
 </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- Content container -->
+    <div class="container">
 
-<div class="header">
-  <img src="images/DJ BURNOUT Logo.jpg" alt="DJ BURNOUT" width=1200>
-</div>
+      <!-- Image and name container. Change to your picture here. -->
+      <div class="" style="text-align: center">
+        <!-- <img src="https://www.w3schools.com/howto/img_link_tree_template3_bio.jpg" class="w3-round" alt="person image" width="250px" height="200px" style="border-radius: 50%; border: 5px solid #4ab6e0 !important; margin-top: 16px;"> -->
+        <img src="images/logo.jpg" alt="logo" width="250px" style="margin-top: 16px;">
+        <!-- <p class="name"><br><span class="w3-padding w3-theme-l1 w3-margin w3-round" style="font-weight: bolder; font-size: x-large; border: 3px solid #1b7a9f;">Hey. I'm Joe!</span></p><br> -->
+        <p><span class="profession w3-padding w3-theme-d5 w3-round" style="font-weight: bolder; border: 3px solid #d0ecf7;">I am a DJ, and I am a burnout</span></p><br>
+      </div>
 
-<div class="topnav">
-  <a href="#about">About</a>
-  <a href="#music">Music</a>
-  <a href="#shows">Shows</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
-</div>
+      <!-- Links section 1. Replace the # inside of the "" with your links. -->
+      <div class="links-container">
+        <a href="#" class="w3-button w3-round w3-theme-d3 w3-border link" target="_blank">MY CLIMBS</a>
+        <br>
+        <a href="#" class="w3-button w3-round w3-theme-d3 w3-border link" target="_blank">EXPEDITIONS</a>
+        <br>
+        <a href="#" class="w3-button w3-round w3-theme-d3 w3-border link" target="_blank">MY WORKOUT</a>
+        <br>
+        <a href="#" class="w3-button w3-round w3-theme-d3 w3-border link" target="_blank">MY BLOG</a><br>
+        <br>
+        <p><span class="subscribe w3-padding w3-theme-d5 w3-round" style="font-weight: bolder; border: 3px solid #d0ecf7;">Subscribe to my news!</span></p>
+        <div class="submit" style="width: 80%;">
+          <form>
+            <input class="w3-input w3-round w3-theme-d3 w3-border" type="text" placeholder="Your email . . . " name="email">
+            <button class="w3-button w3-round w3-border" type="submit">SUBSCRIBE</button>
+          </form>
+        </div><br>
+        <div class="icons w3-padding">
+          <a href="#" target="_blank">
+            <i data-feather="facebook"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i data-feather="instagram"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i data-feather="linkedin"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i data-feather="twitter"></i>
+          </a>
+        </div>
+      </div>
 
-<div class="row">
-  <div class="column">
-    <div class="card" id="about">
-      <h2>ABOUT ME</h2>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>I am a DJ, and I am a burnout</p>
     </div>
-    <div class="card" id="music">
-      <h2>MUSIC</h2>
-      <div class="fakeimg" style="height:200px;">Image</div>
-      <p>A song..</p>
-      <p>another song..</p>
-    </div>
-    <div class="card" id="shows">
-      <h2>SHOWS</h2>
-      <div class="fakeimg" style="height:100px;">Image</div>
-      <p>Details about shows</p>
-    </div>
-    <div class="card" id="gallery">
-      <h2>GALLERY</h2>
-      <div class="fakeimg"><p>A picture</p></div>
-      <div class="fakeimg"><p>Another picture</p></div>
-      <div class="fakeimg"><p>but an actual gallery..</p></div>
-    </div>
-    <div class="card" id="contact">
-      <h2>CONTACT</h2>
-      <p>Contact form will go here</p>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  <h2>Footer, will contain social links</h2>
-</div>
-
-</body>
-</html>
+    <script>
+      feather.replace()
+    </script>
+  </body>  </html>
