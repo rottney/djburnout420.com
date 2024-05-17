@@ -16,9 +16,12 @@
 	</style>
 </head>
 
-<body>
+<body onload="loadTrack()">
     <div>
         <h1>About</h1>
+    </div>
+    <div>
+        I am a DJ, and I am a burnout
     </div>
 	<div>
 		<h1>Music</h1>
@@ -29,31 +32,69 @@
     </div>
     <div>
         <h2>OGs / Remixes</h2>
-        <script>
-            const tracklist = [
-                "All my friends live in Brooklyn :'(",
-                "Fergie - Glamorous (DJ BURNOUT Remix)",
-                "molly percocet",
-                "trippin balls in the wegmans parking lot",
-            ];
+        <button onclick="prev()">Prev</button>
+        <button onclick="next()">Next</button>
+        <br>
+        <p id="trackName">Loading...</p>
+        <audio id="audioPlayer", controls>
+            <source id="currentTrack", src="", type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
 
-            for (let i = 0; i < tracklist.length; i++) {
-                let title = tracklist[i];
-
-                document.write(
-                    title.concat(
-                        "\n",
-                        "<br>\n",
-                        "<audio controls>\n",
-                        "\t<source src=\"music/", tracklist[i], ".mp3\" type=\"audio/mpeg\">\n",
-                        "\tYour browser does not support the audio element.\n",
-                        "</audio>\n",
-                        "<br>\n"
-                    )
-                );
-            }
-        </script>
 	</div>
 </body>
+
+<script>
+    const tracklist = [
+        "All my friends live in Brooklyn :'(",
+        "Fergie - Glamorous (DJ BURNOUT Remix)",
+        "molly percocet",
+        "trippin balls in the wegmans parking lot",
+    ];
+
+    let pos = 0;
+
+    function loadTrack() {
+        const currentTrack = document.getElementById("currentTrack");
+        currentTrack.setAttribute("src", getPath());
+
+        const audioPlayer = document.getElementById("audioPlayer");
+        const audioPlayerHTML = audioPlayer.outerHTML;
+        audioPlayer.outerHTML = audioPlayerHTML;
+
+        const trackName = document.getElementById("trackName");
+        trackName.innerHTML = getTitle();
+    }
+
+    function prev() {
+        if (pos !== 0) {
+            pos--;
+        }
+        // TODO: gray out "Prev" button
+        else {
+            console.log("already at the beginning");
+        }
+        loadTrack();
+    }
+
+    function next() {
+        if (pos !== tracklist.length - 1) {
+            pos++;
+        }
+        // TODO: gray out "Next" button
+        else {
+            console.log("already at the end");
+        }
+        loadTrack();
+    }
+
+    function getPath() {
+        return "music/".concat(tracklist[pos], ".mp3");
+    }
+
+    function getTitle() {
+        return tracklist[pos];
+    }
+</script>
 
 </html>
