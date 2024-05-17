@@ -20,39 +20,39 @@
     <div>
         <h1>About</h1>
     </div>
-    <div>
-        <p>I am a DJ, and I am a burnout</p>
-    </div>
 	<div>
 		<h1>Music</h1>
     </div>
     <div>
-
         <h2>DJ Mixes</h2>
         <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1427811964&color=%230d1a10&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
     </div>
     <div>
         <h2>OGs / Remixes</h2>
-        All my friends live in Brooklyn :'(
-        <audio controls>
-            <source src="music/03 all my friends live in brooklyn _'(.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        Fergie - Glamorous (DJ BURNOUT Remix)
-        <audio controls>
-            <source src="music/07 Glamorous (DJ BURNOUT Remix).mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        molly percocet
-        <audio controls>
-            <source src="music/molly percocet.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        trippin balls in the wegmans parking lot
-        <audio controls>
-            <source src="music/trippin balls in the wegmans parking lot.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+        <script>
+            const tracklist = [
+                "All my friends live in Brooklyn :'(",
+                "Fergie - Glamorous (DJ BURNOUT Remix)",
+                "molly percocet",
+                "trippin balls in the wegmans parking lot",
+            ];
+
+            for (let i = 0; i < tracklist.length; i++) {
+                let title = tracklist[i];
+
+                document.write(
+                    title.concat(
+                        "\n",
+                        "<br>\n",
+                        "<audio controls>\n",
+                        "\t<source src=\"music/", tracklist[i], ".mp3\" type=\"audio/mpeg\">\n",
+                        "\tYour browser does not support the audio element.\n",
+                        "</audio>\n",
+                        "<br>\n"
+                    )
+                );
+            }
+        </script>
 	</div>
 </body>
 
