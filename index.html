@@ -32,8 +32,8 @@
     </div>
     <div>
         <h2>OGs / Remixes</h2>
-        <button onclick="prev()">Prev</button>
-        <button onclick="next()">Next</button>
+        <button id="prevButton" onclick="prev()">Prev</button>
+        <button id="nextButton" onclick="next()">Next</button>
         <br>
         <p id="trackName">Loading...</p>
         <audio id="audioPlayer", controls>
@@ -59,21 +59,35 @@
         currentTrack.setAttribute("src", getPath());
 
         const audioPlayer = document.getElementById("audioPlayer");
-        const audioPlayerHTML = audioPlayer.outerHTML;
-        audioPlayer.outerHTML = audioPlayerHTML;
+        const audioPlayerHtml = audioPlayer.outerHTML;
+        audioPlayer.outerHTML = audioPlayerHtml;
 
         const trackName = document.getElementById("trackName");
         trackName.innerHTML = getTitle();
+
+        renderButtons(pos);
+    }
+
+    function renderButtons(pos) {
+        const prevButton = document.getElementById("prevButton");
+        const nextButton = document.getElementById("nextButton");
+
+        prevButton.removeAttribute("disabled");
+        nextButton.removeAttribute("disabled");
+
+        if (pos == 0) {
+            prevButton.setAttribute("disabled", true);
+        }
+        else if (pos == tracklist.length - 1) {
+            nextButton.setAttribute("disabled", true);
+        }
     }
 
     function prev() {
         if (pos !== 0) {
             pos--;
         }
-        // TODO: gray out "Prev" button
-        else {
-            console.log("already at the beginning");
-        }
+
         loadTrack();
     }
 
@@ -81,10 +95,7 @@
         if (pos !== tracklist.length - 1) {
             pos++;
         }
-        // TODO: gray out "Next" button
-        else {
-            console.log("already at the end");
-        }
+
         loadTrack();
     }
 
