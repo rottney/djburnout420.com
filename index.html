@@ -3,6 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 	<style>
 		div {
 			/*
@@ -19,6 +20,8 @@
             height: auto;
         }
 	</style>
+
+    <script src="scripts/script.js" async></script>
 </head>
 
 <body onload="loadTrack()">
@@ -45,8 +48,8 @@
         <br><br>
         <img id="albumArt" src="" alt="Loading album art...">
         <p id="trackName">Loading...</p>
-        <audio id="audioPlayer", controls>
-            <source id="currentTrack", src="", type="audio/mp3">
+        <audio id="audioPlayer" controls>
+            <source id="currentTrack" src="" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
 	</div>
@@ -57,7 +60,5 @@
         <p>Follow me on socials: [links]</p>
     </div>
 </body>
-
-<script src="scripts/script.js"></script>
 
 </html>
