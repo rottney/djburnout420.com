@@ -19,34 +19,37 @@
 <body onload="loadTrack()">
     <div>
         <h1>About</h1>
+        <p>I am a DJ, and I am a burnout</p>
     </div>
+
     <div>
-        I am a DJ, and I am a burnout
+        <h1>Shows</h1>
+        <p>No shows yet. Check back soon!</p>
     </div>
+
 	<div>
 		<h1>Music</h1>
-    </div>
-    <div>
+    
         <h2>DJ Mixes</h2>
         <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1427811964&color=%230d1a10&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
-    </div>
-    <div>
+        <br>
+
         <h2>OGs / Remixes</h2>
         <button id="prevButton" onclick="prev()">Prev</button>
         <button id="nextButton" onclick="next()">Next</button>
-        <br>
+        <br><br>
+        <img id="album_art" src="" alt="Loading album art...">
         <p id="trackName">Loading...</p>
         <audio id="audioPlayer", controls>
             <source id="currentTrack", src="", type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
-
 	</div>
 </body>
 
 <script>
     const tracklist = [
-        "All my friends live in Brooklyn :'(",
+        "all my friends live in Brooklyn :'(",
         "Fergie - Glamorous (DJ BURNOUT Remix)",
         "molly percocet",
         "trippin balls in the wegmans parking lot",
@@ -55,8 +58,11 @@
     let pos = 0;
 
     function loadTrack() {
+        const albumArt = document.getElementById("album_art");
+        albumArt.setAttribute("src", getArtworkPath());
+
         const currentTrack = document.getElementById("currentTrack");
-        currentTrack.setAttribute("src", getPath());
+        currentTrack.setAttribute("src", getAudioPath());
 
         const audioPlayer = document.getElementById("audioPlayer");
         const audioPlayerHtml = audioPlayer.outerHTML;
@@ -99,7 +105,11 @@
         loadTrack();
     }
 
-    function getPath() {
+    function getArtworkPath() {
+        return "images/".concat(tracklist[pos], ".jpg");
+    }
+
+    function getAudioPath() {
         return "music/".concat(tracklist[pos], ".mp3");
     }
 
